@@ -7,17 +7,17 @@ export default function BackgroundGlow() {
       <div className="absolute bottom-[-20%] left-[20%] w-[60%] h-[40%] rounded-full bg-star-glow blur-[150px] opacity-40"></div>
 
       {/* Constellation / Astrolabe SVG Pattern */}
-      <div className="absolute inset-0 opacity-[0.05] mix-blend-screen" style={{ backgroundImage: "url('data:image/svg+xml,%3Csvg width=\\'60\\' height=\\'60\\' viewBox=\\'0 0 60 60\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M30 0 L30 60 M0 30 L60 30 M25 25 L35 35 M25 35 L35 25\\' stroke=\\'%23E2C275\\' stroke-width=\\'0.5\\' fill=\\'none\\' /%3E%3Cpath d=\\'M15 15 L45 45 M15 45 L45 15\\' stroke=\\'%23E2C275\\' stroke-width=\\'0.2\\' fill=\\'none\\' stroke-dasharray=\\'2 2\\' /%3E%3Ccircle cx=\\'30\\' cy=\\'30\\' r=\\'20\\' stroke=\\'%23E2C275\\' stroke-width=\\'0.5\\' fill=\\'none\\' /%3E%3C/svg%3E')", backgroundSize: "120px 120px" }}></div>
+      <div className="absolute inset-0 bg-astrolabe pointer-events-none z-[-1]"></div>
 
       {/* Scattered Stars / Data Nodes */}
-      <div className="absolute top-[15%] left-[25%] w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_8px_rgba(226,194,117,1)] animate-pulse"></div>
+      <div className="absolute top-[15%] left-[25%] w-1.5 h-1.5 bg-accent rounded-full shadow-[0_0_8px_var(--color-accent)] animate-pulse"></div>
       <div className="absolute top-[35%] left-[10%] w-1 h-1 bg-foreground rounded-full opacity-60 animate-ping" style={{ animationDuration: '3s' }}></div>
-      <div className="absolute top-[60%] left-[30%] w-2 h-2 bg-accent/80 rounded-full shadow-[0_0_10px_rgba(226,194,117,0.8)] animate-pulse" style={{ animationDelay: '1s' }}></div>
-      <div className="absolute top-[80%] left-[15%] w-1 h-1 bg-foreground/80 rounded-full shadow-[0_0_15px_rgba(255,255,255,0.8)] animate-pulse" style={{ animationDuration: '4s' }}></div>
+      <div className="absolute top-[60%] left-[30%] w-2 h-2 bg-accent/80 rounded-full shadow-[0_0_10px_var(--color-accent)] animate-pulse" style={{ animationDelay: '1s' }}></div>
+      <div className="absolute top-[80%] left-[15%] w-1 h-1 bg-foreground/80 rounded-full shadow-[0_0_15px_var(--color-foreground)] animate-pulse" style={{ animationDuration: '4s' }}></div>
       
-      <div className="absolute top-[20%] right-[20%] w-2 h-2 bg-accent rounded-full shadow-[0_0_12px_rgba(226,194,117,1)] animate-pulse" style={{ animationDelay: '2s' }}></div>
+      <div className="absolute top-[20%] right-[20%] w-2 h-2 bg-accent rounded-full shadow-[0_0_12px_var(--color-accent)] animate-pulse" style={{ animationDelay: '2s' }}></div>
       <div className="absolute top-[50%] right-[10%] w-1 h-1 bg-foreground/50 rounded-full animate-ping" style={{ animationDuration: '5s' }}></div>
-      <div className="absolute top-[75%] right-[25%] w-1.5 h-1.5 bg-accent/90 rounded-full shadow-[0_0_10px_rgba(226,194,117,0.9)] animate-pulse" style={{ animationDuration: '2.5s' }}></div>
+      <div className="absolute top-[75%] right-[25%] w-1.5 h-1.5 bg-accent/90 rounded-full shadow-[0_0_10px_var(--color-accent)] animate-pulse" style={{ animationDuration: '2.5s' }}></div>
       <div className="absolute top-[10%] right-[40%] w-1 h-1 bg-foreground/70 rounded-full animate-pulse"></div>
 
       {/* Orbit Rings (Astrolabe Element) */}

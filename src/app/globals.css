@@ -1,5 +1,14 @@
 @import "tailwindcss";
 
+/* View Transitions API for Dark/Light Mode Circular Reveal */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+::view-transition-old(root) { z-index: 1; }
+::view-transition-new(root) { z-index: 9999; }
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
@@ -28,15 +37,15 @@
 }
 
 .light-mode {
-  --background: #e8f1fb;
-  --foreground: #08101e;
-  --accent-color: #2979cc;
-  --card-bg: rgba(255, 255, 255, 0.72);
-  --node-bg: #f0f6fc;
-  --border-light: rgba(41, 121, 204, 0.2);
-  --star-glow: rgba(41, 121, 204, 0.2);
-  --star-glow-strong: rgba(41, 121, 204, 0.5);
-  --text-muted: #374151;
+  --background: #F4F9FF; /* Icy blue / almost white */
+  --foreground: #101B3A; /* Midnight blue for absolute readability */
+  --accent-color: #1E66E0; /* Suisei Royal/Sky Blue */
+  --card-bg: rgba(255, 255, 255, 0.85); /* Frosted glass */
+  --node-bg: #EAF2FB; /* Lightly tinted blue node */
+  --border-light: rgba(30, 102, 224, 0.45); /* Increased opacity for ringing visibility */
+  --star-glow: rgba(226, 194, 117, 0.4); /* Suisei Gold stars glow */
+  --star-glow-strong: rgba(226, 194, 117, 0.8);
+  --text-muted: #475569; /* Slate */
 }
 
 /* ─── BASE ─────────────────────────────────────────────── */
@@ -48,6 +57,22 @@ body {
   transition: background-color 0.6s cubic-bezier(0.4, 0, 0.2, 1),
               color 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
+
+/* ─── CUSTOM BACKGROUNDS ────────────────────────────────── */
+.bg-astrolabe {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L30 60 M0 30 L60 30 M25 25 L35 35 M25 35 L35 25' stroke='%23E2C275' stroke-width='0.5' fill='none' /%3E%3Cpath d='M15 15 L45 45 M15 45 L45 15' stroke='%23E2C275' stroke-width='0.2' fill='none' stroke-dasharray='2 2' /%3E%3Ccircle cx='30' cy='30' r='20' stroke='%23E2C275' stroke-width='0.5' fill='none' /%3E%3C/svg%3E");
+  background-size: 120px 120px;
+  mix-blend-mode: screen;
+  opacity: 0.08;
+  transition: opacity 0.5s ease;
+}
+
+.light-mode .bg-astrolabe {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M30 0 L30 60 M0 30 L60 30 M25 25 L35 35 M25 35 L35 25' stroke='%231E66E0' stroke-width='0.5' fill='none' /%3E%3Cpath d='M15 15 L45 45 M15 45 L45 15' stroke='%231E66E0' stroke-width='0.2' fill='none' stroke-dasharray='2 2' /%3E%3Ccircle cx='30' cy='30' r='20' stroke='%231E66E0' stroke-width='0.5' fill='none' /%3E%3C/svg%3E");
+  mix-blend-mode: multiply;
+  opacity: 0.25;
+}
+
 
 /* ─── KEYFRAMES ─────────────────────────────────────────── */
 

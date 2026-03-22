@@ -1,5 +1,8 @@
 "use client";
 
+import { motion } from "framer-motion";
+import Image from "next/image";
+
 export default function Experience() {
   const experiences = [
     {
@@ -14,25 +17,37 @@ export default function Experience() {
       ]
     },
     {
+      role: "Director of Research and Development",
+      org: "Innovative Research on Intelligence System Universitas Airlangga (IRIS Unair)",
+      period: "Jan 2026 - Present",
+      logo: "iris-logo.png",
+      points: [
+        "Spearheaded the strategic direction of the R&D division.",
+        "Managed an R&D division consisting of 4 Project Managers, 3 Competition Managers, and 21 Researchers.",
+        "Orchestrated a comprehensive training curriculum, project roadmap, and internal \"Kaggle-style\" simulations.",
+        "Ensured the quality and technical rigor of all research outputs."
+      ]
+    },
+    {
       role: "Inspectorate General",
       org: "Student Executive Board FTMM Airlangga University",
       period: "Jan 2025 - Present",
       logo: "bem-peta-logo.png",
       points: [
-        "Conduct supervision, guidance, and evaluation of ministries: Kekraf, PBSO, and PSDM",
-        "Assist ministries in executing and achieving their work program goals",
-        "Responsible for the talent tracker and selecting Staff & Ministry of the Month"
+        "Conducted supervision, guidance, and evaluation for the Kekraf, PBSO, and PSDM ministries.",
+        "Assisted ministries in the strategic execution of 100% of their work program goals.",
+        "Spearheaded the talent tracker system and evaluated monthly performances to select the Staff & Ministry of the Month."
       ]
     },
     {
       role: "Researcher 2023",
-      org: "Innovative Research on Intelligence System (IRIS)",
+      org: "Innovative Research on Intelligence System Universitas Airlangga (IRIS Unair)",
       period: "Feb 2025 - Present",
       logo: "iris-logo.png",
       points: [
-        "1st Winner of Kaggle Clash 3 and Complete IRIS short-term research projects",
-        "Competed in 13 Data Science competitions, and won 4 of them",
-        "Represented IRIS as a podcast speaker at the JAIS BEM FTMM event"
+        "Won 1st Place in Kaggle Clash 3 and successfully delivered short-term AI research projects.",
+        "Participated in 13 National and International Data Science competitions, securing 4 podium finishes.",
+        "Represented IRIS as a featured podcast speaker at the JAIS BEM FTMM event."
       ]
     },
     {
@@ -41,9 +56,9 @@ export default function Experience() {
       period: "Oct 2024 - Present",
       logo: "unair-logo.png",
       points: [
-        "Coordinated awardee activities of the BSI Scholarship UNAIR",
-        "Led the Workshop & Sharing Session of BSI Scholarship 2025",
-        "Acted as mediator between awardees, mentors, and BSI representatives"
+        "Coordinated and managed activities for all BSI Scholarship awardees at UNAIR.",
+        "Led and organized the BSI Scholarship 2025 Workshop & Sharing Session.",
+        "Facilitated seamless communication as a mediator between awardees, mentors, and BSI representatives."
       ]
     },
     {
@@ -52,31 +67,36 @@ export default function Experience() {
       period: "Feb 2024 - Jan 2025",
       logo: "bem-aksara-logo.png",
       points: [
-        "Collected and conveyed student aspirations to the university",
-        "Served as Chief of Committee (CoC) for Monthly Discussions (DILAN)",
-        "Participated in 13 programs: 2 as KOC, 5 as coordinator, 6 as staff"
+        "Bridged communication between students and the university by methodically collecting and conveying student aspirations.",
+        "Served as Chief of Committee (CoC) for the Monthly Discussions (DILAN) program.",
+        "Contributed to 13 distinct programs, holding key leadership roles such as Coordinator (5x) and Key Organizing Committee (2x)."
+      ]
+    },
+    {
+      role: "Organizational Staff",
+      org: "Jujitsu Student Activity Unit (UKM JJUA), Universitas Airlangga",
+      period: "Oct 2023 - Nov 2024",
+      logo: "jjua-logo.png",
+      points: [
+        "Ensured the smooth and successful execution of key UKM JJUA programs.",
+        "Optimized event operations by arranging structured schedules for all UKM JJUA activities.",
+        "Prepared and managed the JJUA exhibition booth, significantly increasing student engagement during the 2024 exhibition."
       ]
     }
   ];
 
   const hardSkills = [
-    { name: "Python", icon: "🐍" },
-    { name: "Next.js", icon: "⚙️" },
-    { name: "R", icon: "📊" },
-    { name: "Laravel", icon: "🐘" },
-    { name: "MySQL", icon: "🐬" },
-    { name: "Tableau", icon: "📈" },
-    { name: "Figma", icon: "🎨" },
-    { name: "Canva", icon: "🖌️" },
-    { name: "Excel & Office", icon: "📗" }
-  ];
-
-  const softSkills = [
-    { name: "Public speaking", icon: "🎤" },
-    { name: "Leadership", icon: "👑" },
-    { name: "Effective communication", icon: "💬" },
-    { name: "Critical thinking", icon: "🧠" },
-    { name: "Teamwork", icon: "🤝" }
+    { name: "Python", iconUrl: "https://cdn.simpleicons.org/python/3776AB" },
+    { name: "Next.js", iconUrl: "https://cdn.simpleicons.org/nextdotjs" },
+    { name: "R", iconUrl: "https://cdn.simpleicons.org/r/276DC3" },
+    { name: "Laravel", iconUrl: "https://cdn.simpleicons.org/laravel/FF2D20" },
+    { name: "PHP", iconUrl: "https://cdn.simpleicons.org/php/777BB4" },
+    { name: "MySQL", iconUrl: "https://cdn.simpleicons.org/mysql/4479A1" },
+    { name: "GitHub", iconUrl: "https://cdn.simpleicons.org/github" },
+    { name: "Tableau", iconUrl: "https://api.iconify.design/logos:tableau-icon.svg" },
+    { name: "Figma", iconUrl: "https://cdn.simpleicons.org/figma/F24E1E" },
+    { name: "Canva", iconUrl: "https://cdn.simpleicons.org/canva/00C4CC" },
+    { name: "Excel & Office", iconUrl: "https://api.iconify.design/vscode-icons:file-type-excel.svg" }
   ];
 
   return (
@@ -99,7 +119,14 @@ export default function Experience() {
 
           <div className="space-y-12">
             {experiences.map((exp, idx) => (
-              <div key={idx} className={`relative flex flex-col md:flex-row items-start md:items-stretch group ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''} reveal stagger-${(idx % 5) + 1}`}>
+              <motion.div 
+                key={idx} 
+                initial={{ opacity: 0, y: 70 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true, margin: "-50px" }}
+                transition={{ duration: 0.7, delay: idx * 0.15, ease: "easeOut" }}
+                className={`relative flex flex-col md:flex-row items-start md:items-stretch group ${idx % 2 === 0 ? 'md:flex-row-reverse' : ''}`}
+              >
                 
                 {/* Star Node pointing to the timeline */}
                 <div className="timeline-node absolute left-[19px] md:left-1/2 w-3 h-3 bg-node border-2 border-accent rounded-full shadow-[0_0_12px_var(--color-accent)] md:-translate-x-1/2 mt-10 md:mt-12 z-10 group-hover:bg-accent"></div>
@@ -117,14 +144,16 @@ export default function Experience() {
                     <div className="flex flex-col items-start gap-4 mb-5 md:mb-6 border-b border-border-light pb-5 md:pb-6 relative z-20">
                       
                       <div className="flex items-start md:items-center gap-4 w-full">
-                        <div className="w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden bg-node border border-border-light shrink-0 flex items-center justify-center p-2 group-hover/card:border-accent/50 transition-all duration-500 shadow-inner group-hover/card:shadow-[0_0_15px_rgba(226,194,117,0.2)]">
-                          <img 
+                        <div className="relative w-12 h-12 md:w-16 md:h-16 rounded-xl md:rounded-2xl overflow-hidden bg-node border border-border-light shrink-0 flex items-center justify-center p-2 group-hover/card:border-accent/50 transition-all duration-500 shadow-inner group-hover/card:shadow-[0_0_15px_rgba(226,194,117,0.2)]">
+                          <Image 
                             src={`/experience/${exp.logo}`} 
                             alt={`${exp.org} Logo`} 
-                            className="w-full h-full object-contain drop-shadow-[0_0_5px_rgba(255,255,255,0.2)] group-hover/card:scale-110 transition-transform duration-500"
+                            fill
+                            className="object-contain p-1.5 drop-shadow-[0_0_5px_rgba(255,255,255,0.2)] group-hover/card:scale-110 transition-transform duration-500"
                             onError={(e) => {
-                              e.currentTarget.onerror = null;
-                              e.currentTarget.src = `data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050B14'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='10' fill='%236b7280'%3EUnggah%3C/text%3E%3C/svg%3E`;
+                              const target = e.currentTarget as HTMLImageElement;
+                              target.onerror = null;
+                              target.src = `data:image/svg+xml;charset=UTF-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' fill='%23050B14'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' font-family='sans-serif' font-size='10' fill='%236b7280'%3EUnggah%3C/text%3E%3C/svg%3E`;
                             }}
                           />
                         </div>
@@ -166,7 +195,7 @@ export default function Experience() {
                   </div>
                 </div>
 
-              </div>
+              </motion.div>
             ))}
           </div>
         </div>
@@ -183,34 +212,34 @@ export default function Experience() {
           </p>
         </div>
 
-        <div className="flex flex-col md:flex-row gap-8 max-w-6xl mx-auto">
+        <style dangerouslySetInnerHTML={{__html: `
+          .theme-invert { filter: invert(1) brightness(1.2); }
+          .light-mode .theme-invert { filter: invert(0); }
+        `}} />
+        <div className="flex flex-col gap-8 max-w-4xl mx-auto px-4 md:px-8">
           
-          <div className="flex-1 glass-card p-10 relative overflow-hidden group hover:border-accent/40 transition-colors duration-500">
-            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/10 transition-colors"></div>
-            <h3 className="text-2xl font-bold text-foreground mb-10 flex items-center border-b border-border-light pb-4">
-              <span className="mr-4 text-accent text-3xl drop-shadow-[0_0_8px_rgba(226,194,117,0.8)]">✦</span> Technical Instruments
+          <div className="w-full bg-card/60 backdrop-blur-xl border border-border-light p-8 md:p-10 rounded-[2rem] relative overflow-hidden group hover:border-accent/40 shadow-sm transition-all duration-500">
+            <div className="absolute -bottom-20 -right-20 w-64 h-64 bg-accent/5 rounded-full blur-3xl group-hover:bg-accent/15 transition-colors pointer-events-none"></div>
+            <div className="absolute top-0 right-0 w-full h-[1px] bg-gradient-to-l from-transparent via-accent/20 to-transparent pointer-events-none"></div>
+            
+            <h3 className="text-xl md:text-2xl font-bold text-foreground mb-8 flex items-center justify-center md:justify-start border-b border-border-light/50 pb-5">
+              <span className="mr-3 text-accent text-2xl drop-shadow-[0_0_8px_rgba(226,194,117,0.8)]">✦</span> Technical Instruments
             </h3>
-            <div className="flex flex-wrap gap-5 relative z-10">
-              {hardSkills.map((skill) => (
-                <div key={skill.name} className="skill-tag flex items-center px-6 py-3.5 rounded-2xl bg-node border border-border-light text-foreground/90 text-base md:text-lg font-medium cursor-default">
-                  <span className="text-2xl mr-3 drop-shadow-md">{skill.icon}</span>
+            <div className="flex flex-wrap justify-center md:justify-start gap-3 md:gap-4 relative z-10">
+              {hardSkills.map((skill, idx) => (
+                <motion.div 
+                  key={skill.name} 
+                  initial={{ opacity: 0, scale: 0.9 }}
+                  whileInView={{ opacity: 1, scale: 1 }}
+                  viewport={{ once: true }}
+                  transition={{ duration: 0.4, delay: idx * 0.05 }}
+                  className="flex items-center px-4 py-2.5 md:px-5 md:py-3 rounded-[1rem] bg-foreground/[0.03] border border-border-light shadow-[inset_0_1px_1px_rgba(255,255,255,0.05)] hover:border-accent/40 hover:bg-accent/5 transition-all text-foreground/90 text-sm md:text-base font-semibold cursor-default hover:shadow-[0_4px_15px_var(--star-glow)] hover:-translate-y-0.5"
+                >
+                  <div className={`w-5 h-5 md:w-6 md:h-6 mr-3 flex-shrink-0 ${skill.name === 'Next.js' || skill.name === 'GitHub' ? 'theme-invert' : ''}`}>
+                    <img src={skill.iconUrl} alt={skill.name} className="w-full h-full object-contain drop-shadow-sm" draggable="false" />
+                  </div>
                   {skill.name}
-                </div>
-              ))}
-            </div>
-          </div>
-
-          <div className="flex-1 glass-card p-10 relative overflow-hidden group hover:border-accent/40 transition-colors duration-500">
-             <div className="absolute -bottom-20 -left-20 w-64 h-64 bg-foreground/5 rounded-full blur-3xl group-hover:bg-accent/5 transition-colors"></div>
-            <h3 className="text-2xl font-bold text-foreground mb-10 flex items-center border-b border-border-light pb-4">
-              <span className="mr-4 text-foreground/50 text-3xl">✧</span> Interpersonal Traits
-            </h3>
-            <div className="flex flex-wrap gap-5 relative z-10">
-              {softSkills.map((skill) => (
-                <div key={skill.name} className="skill-tag flex items-center px-6 py-3.5 rounded-2xl bg-node border border-border-light text-foreground/90 text-base md:text-lg font-medium cursor-default">
-                  <span className="text-2xl mr-3 drop-shadow-md">{skill.icon}</span>
-                  {skill.name}
-                </div>
+                </motion.div>
               ))}
             </div>
           </div>
