@@ -36,7 +36,7 @@ export default function Profile() {
   const [profilePhoto, setProfilePhoto] = useState<string>("");
 
   useEffect(() => {
-    const baseName = theme === "light" ? "profile-light" : "profile-dark";
+    const baseName = theme === "light" ? "faiz-profile-light" : "faiz-profile-dark";
 
     const tryLoad = (extensions: string[]) => {
       if (extensions.length === 0) {
@@ -109,7 +109,7 @@ export default function Profile() {
           <div className="absolute inset-0 rounded-[3rem] border border-border-light shadow-2xl overflow-hidden bg-white/40 dark:bg-[#0c0d14] backdrop-blur-xl z-10 transform transition-transform duration-700 group-hover:-rotate-2 group-hover:scale-[1.03]">
             {profilePhoto ? (
               <Image 
-                src={`${profilePhoto}?v=${new Date().getTime()}`}
+                src={profilePhoto}
                 alt="Faiz Iqbal Itishom"
                 fill
                 unoptimized={process.env.NODE_ENV === 'development'}
